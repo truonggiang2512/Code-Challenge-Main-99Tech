@@ -1,0 +1,29 @@
+var sum_to_n_a = function (n) {
+  // create the array of gradually Increasing number less or equal than n
+  // loop the graduallyIncreaseNumberArr and add to total then return the total 
+  let total = 0;
+  let graduallyIncreaseNumberArr = Array.from({ length: n }, (_, i) => i + 1);
+
+  for (let i of graduallyIncreaseNumberArr) {
+    total += i;
+  }
+  return total;
+};
+
+
+var sum_to_n_b = function (n) {
+  /*
+  use a mathematical formula for the sum of an arithmetic series:
+  the formula: total= ( n*(n+1))/2
+  */
+  return (n * (n + 1)) / 2;
+};
+
+var sum_to_n_c = function (n) {
+  //using recursion
+  if (n === 1) return 1;
+  return n + sum_to_n_c(n - 1);
+};
+console.log(sum_to_n_a(5))
+console.log(sum_to_n_b(5))
+console.log(sum_to_n_c(5))
